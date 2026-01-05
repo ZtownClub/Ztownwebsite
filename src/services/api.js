@@ -1,4 +1,4 @@
-const API_BASE_URL = 'https://ztown-backend.vercel.app';
+const API_BASE_URL = 'https://ztown-backend.vercel.app/api';
 
 // Contact Form API
 export const submitContactForm = async (formData) => {

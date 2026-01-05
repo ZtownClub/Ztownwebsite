@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test zTown Backend</title>
+</head>
+<body>
+    <h1>Test zTown Backend API</h1>
+    
+    <h2>1. Test Health Check</h2>
+    <button onclick="testHealth()">Test Health</button>
+    <pre id="health-result"></pre>
+
+    <h2>2. Test Contact Form</h2>
+    <button onclick="testContact()">Test Contact API</button>
+    <pre id="contact-result"></pre>
+
+    <h2>3. Test Partner Form</h2>
+    <button onclick="testPartner()">Test Partner API</button>
+    <pre id="partner-result"></pre>
+
+    <script>
+        async function testHealth() {
+            try {
+                const response = await fetch('http://localhost:5001/');
+                const data = await response.json();
+                document.getElementById('health-result').textContent = JSON.stringify(data, null, 2);
+            } catch (error) {
+                document.getElementById('health-result').textContent = 'Error: ' + error.message;
+            }
+        }
+
+        async function testContact() {
+            try {
+                const response = await fetch('http://localhost:5001/api/contacts', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        name: 'Test User',
+                        email: 'test@example.com',
+                        subject: 'Test Subject',
+                        message: 'This is a test message'
+                    })
+                });
+                const data = await response.json();
+                document.getElementById('contact-result').textContent = JSON.stringify(data, null, 2);
+            } catch (error) {
+                document.getElementById('contact-result').textContent = 'Error: ' + error.message;
+            }
+        }
+
+        async function testPartner() {
+            try {
+                const response = await fetch('http://localhost:5001/api/partners', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        name: 'Test Partner',
+                        email: 'partner' + Date.now() + '@example.com',
+                        brandName: 'Test Brand',
+                        contactNumber: '9876543210',
+                        website: 'https://testbrand.com',
+                        storeAddress: 'Test Address, Gurugram'
+                    })
+                });
+                const data = await response.json();
+                document.getElementById('partner-result').textContent = JSON.stringify(data, null, 2);
+            } catch (error) {
+                document.getElementById('partner-result').textContent = 'Error: ' + error.message;
+            }
+        }
+    </script>
+</body>
+</html>

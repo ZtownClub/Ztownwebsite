@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light Mode - Olive/Green Premium Theme */
+    --background: 48 50% 91%;
+    --foreground: 75 25% 20%;
+
+    --card: 48 45% 95%;
+    --card-foreground: 75 25% 20%;
+
+    --popover: 48 45% 95%;
+    --popover-foreground: 75 25% 20%;
+
+    --primary: 75 25% 52%;
+    --primary-foreground: 48 50% 95%;
+
+    --secondary: 80 30% 65%;
+    --secondary-foreground: 75 25% 20%;
+
+    --muted: 48 30% 85%;
+    --muted-foreground: 75 15% 40%;
+
+    --accent: 80 35% 70%;
+    --accent-foreground: 75 25% 20%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 48 50% 95%;
+
+    --border: 75 20% 70%;
+    --input: 75 20% 75%;
+    --ring: 75 25% 52%;
+
+    --radius: 0.75rem;
+
+    /* Custom zTown tokens - Light */
+    --glow-primary: 75 25% 52%;
+    --olive-deep: 75 30% 45%;
+    --olive-light: 80 30% 75%;
+    --gradient-hero: linear-gradient(135deg, hsl(48 50% 91%) 0%, hsl(48 45% 95%) 50%, hsl(48 50% 91%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(48 45% 95%) 0%, hsl(48 50% 91%) 100%);
+    --gradient-cta: linear-gradient(135deg, hsl(75 25% 52%) 0%, hsl(80 30% 58%) 100%);
+    --shadow-glow: 0 0 40px hsl(75 25% 52% / 0.25);
+    --shadow-glow-sm: 0 0 20px hsl(75 25% 52% / 0.15);
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    /* Dark Mode - Soft Olive/Green Dark Theme */
+    --background: 75 20% 12%;
+    --foreground: 48 40% 92%;
+
+    --card: 75 18% 16%;
+    --card-foreground: 48 40% 92%;
+
+    --popover: 75 18% 16%;
+    --popover-foreground: 48 40% 92%;
+
+    --primary: 80 30% 58%;
+    --primary-foreground: 75 20% 10%;
+
+    --secondary: 75 20% 22%;
+    --secondary-foreground: 48 40% 92%;
+
+    --muted: 75 15% 20%;
+    --muted-foreground: 48 20% 60%;
+
+    --accent: 80 25% 50%;
+    --accent-foreground: 48 40% 92%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 48 40% 92%;
+
+    --border: 75 15% 25%;
+    --input: 75 15% 25%;
+    --ring: 80 30% 58%;
+
+    /* Custom zTown tokens - Dark */
+    --glow-primary: 80 30% 58%;
+    --olive-deep: 75 20% 8%;
+    --olive-light: 75 20% 25%;
+    --gradient-hero: linear-gradient(135deg, hsl(75 20% 12%) 0%, hsl(75 18% 16%) 50%, hsl(75 20% 12%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(75 18% 16%) 0%, hsl(75 20% 12%) 100%);
+    --gradient-cta: linear-gradient(135deg, hsl(80 30% 58%) 0%, hsl(80 25% 50%) 100%);
+    --shadow-glow: 0 0 40px hsl(80 30% 58% / 0.25);
+    --shadow-glow-sm: 0 0 20px hsl(80 30% 58% / 0.15);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-outfit antialiased transition-colors duration-300;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent;
+  }
+
+  .glow-effect {
+    box-shadow: var(--shadow-glow);
+  }
+
+  .glow-effect-sm {
+    box-shadow: var(--shadow-glow-sm);
+  }
+
+  .glass-card {
+    @apply bg-card/60 backdrop-blur-xl border border-border/50;
+  }
+
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
+  }
+
+  .gradient-border {
+    position: relative;
+    background: linear-gradient(var(--gradient-card));
+  }
+
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    padding: 1px;
+    border-radius: inherit;
+    background: linear-gradient(135deg, hsl(var(--primary) / 0.5), transparent, hsl(var(--primary) / 0.2));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply relative text-muted-foreground hover:text-foreground transition-colors duration-300;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  .section-heading {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight;
+  }
+
+  .section-subheading {
+    @apply text-lg md:text-xl text-muted-foreground max-w-2xl;
+  }
+}
+
+/* Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px hsl(var(--primary) / 0.3); }
+  50% { box-shadow: 0 0 40px hsl(var(--primary) / 0.5); }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-in-right {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-fade-up {
+  animation: fade-up 0.6s ease-out forwards;
+}
+
+.animate-slide-in-right {
+  animation: slide-in-right 0.6s ease-out forwards;
+}
+
+.animate-scale-in {
+  animation: scale-in 0.5s ease-out forwards;
+}
+
+.animation-delay-100 { animation-delay: 0.1s; }
+.animation-delay-200 { animation-delay: 0.2s; }
+.animation-delay-300 { animation-delay: 0.3s; }
+.animation-delay-400 { animation-delay: 0.4s; }
+.animation-delay-500 { animation-delay: 0.5s; }

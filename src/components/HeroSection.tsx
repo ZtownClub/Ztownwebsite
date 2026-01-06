@@ -20,63 +20,63 @@ const HeroSection = () => {
         <div className="absolute bottom-1/3 right-1/3 w-64 h-64 bg-[#8b9c6d]/15 dark:bg-[#8b9c6d]/25 rounded-full blur-[100px] animate-pulse delay-1000 z-10" />
       </div>
 
-      <div className="container relative z-20 mx-auto px-6 pt-32 pb-20">
-        <div className="max-w-4xl">
+      <div className="container relative z-20 mx-auto px-4 sm:px-6 pt-20 sm:pt-32 pb-12 sm:pb-20">
+        <div className="max-w-4xl text-center sm:text-left">
           {/* Badge with glassmorphism */}
-          <div className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/60 dark:bg-white/10 backdrop-blur-md border border-[#8b9c6d]/30 dark:border-white/20 text-[#4a5a3a] dark:text-white text-sm font-medium mb-8 animate-fade-up shadow-lg">
-            <Zap className="w-4 h-4 text-[#8b9c6d] dark:text-[#a8b88d]" />
+          <div className="inline-flex items-center gap-2 px-4 sm:px-5 py-2 sm:py-2.5 rounded-full bg-white/60 dark:bg-white/10 backdrop-blur-md border border-[#8b9c6d]/30 dark:border-white/20 text-[#2d2d2d] dark:text-white text-xs sm:text-sm font-medium mb-4 sm:mb-8 animate-fade-up shadow-lg">
+            <Zap className="w-3 h-3 sm:w-4 sm:h-4 text-[#8b9c6d] dark:text-[#a8b88d]" />
             <span>Coming soon in Gurugram</span>
-            <div className="w-2 h-2 bg-[#8b9c6d] dark:bg-[#a8b88d] rounded-full animate-pulse" />
+            <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#8b9c6d] dark:bg-[#a8b88d] rounded-full animate-pulse" />
           </div>
 
-          {/* Main Headline - Large and Bold */}
-          <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black leading-[1.1] tracking-tight mb-8 animate-fade-up animation-delay-100">
-            <span className="text-[#3d3d3d] dark:text-white">Your Fashion,</span>
+          {/* Main Headline - Mobile-First Responsive */}
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black leading-[1.1] tracking-tight mb-4 sm:mb-8 animate-fade-up animation-delay-100">
+            <span className="text-[#2d2d2d] dark:text-white">Your Fashion,</span>
             <br />
             <span className="text-[#8b9c6d] dark:text-[#a8b88d]">
               Your Brands,
             </span>
             <br />
-            <span className="text-[#3d3d3d] dark:text-white">Delivered</span>{" "}
+            <span className="text-[#2d2d2d] dark:text-white">Delivered</span>{" "}
             <span className="text-[#8b9c6d] dark:text-[#a8b88d]">Instantly!</span>
           </h1>
 
-          {/* Subheading */}
-          <p className="text-lg md:text-xl text-[#6b6b6b] dark:text-gray-300 max-w-2xl mb-10 animate-fade-up animation-delay-200 leading-relaxed">
+          {/* Subheading - Better Mobile Spacing */}
+          <p className="text-base sm:text-lg md:text-xl text-[#4a4a4a] dark:text-gray-300 max-w-2xl mx-auto sm:mx-0 mb-6 sm:mb-10 animate-fade-up animation-delay-200 leading-relaxed px-2 sm:px-0">
             India's first <span className="text-[#8b9c6d] dark:text-[#a8b88d] font-semibold">hyperlocal fashion delivery platform</span> bringing your favorite brands to your doorstep in minutes.
           </p>
 
-          {/* Feature Pills */}
-          <div className="flex flex-wrap gap-3 mb-10 animate-fade-up animation-delay-300">
-            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/60 dark:bg-white/10 backdrop-blur-md border border-[#8b9c6d]/30 dark:border-white/20 text-[#4a5a3a] dark:text-white text-sm">
-              <Clock className="w-4 h-4 text-[#8b9c6d] dark:text-[#a8b88d]" />
-              <span>40-60 Min Delivery</span>
+          {/* Feature Pills - Mobile-Optimized */}
+          <div className="flex flex-wrap justify-center sm:justify-start gap-2 sm:gap-3 mb-6 sm:mb-10 animate-fade-up animation-delay-300 px-2 sm:px-0">
+            <div className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white/60 dark:bg-white/10 backdrop-blur-md border border-[#8b9c6d]/30 dark:border-white/20 text-[#2d2d2d] dark:text-white text-xs sm:text-sm">
+              <Clock className="w-3 h-3 sm:w-4 sm:h-4 text-[#8b9c6d] dark:text-[#a8b88d]" />
+              <span>40-60 Min</span>
             </div>
-            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/60 dark:bg-white/10 backdrop-blur-md border border-[#8b9c6d]/30 dark:border-white/20 text-[#4a5a3a] dark:text-white text-sm">
-              <Package className="w-4 h-4 text-[#8b9c6d] dark:text-[#a8b88d]" />
+            <div className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white/60 dark:bg-white/10 backdrop-blur-md border border-[#8b9c6d]/30 dark:border-white/20 text-[#2d2d2d] dark:text-white text-xs sm:text-sm">
+              <Package className="w-3 h-3 sm:w-4 sm:h-4 text-[#8b9c6d] dark:text-[#a8b88d]" />
               <span>Local Brands</span>
             </div>
-            <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/60 dark:bg-white/10 backdrop-blur-md border border-[#8b9c6d]/30 dark:border-white/20 text-[#4a5a3a] dark:text-white text-sm">
-              <TrendingUp className="w-4 h-4 text-[#8b9c6d] dark:text-[#a8b88d]" />
-              <span>Trending Fashion</span>
+            <div className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full bg-white/60 dark:bg-white/10 backdrop-blur-md border border-[#8b9c6d]/30 dark:border-white/20 text-[#2d2d2d] dark:text-white text-xs sm:text-sm">
+              <TrendingUp className="w-3 h-3 sm:w-4 sm:h-4 text-[#8b9c6d] dark:text-[#a8b88d]" />
+              <span>Trending</span>
             </div>
           </div>
 
-          {/* CTA Buttons - Larger and More Prominent */}
-          <div className="flex flex-col sm:flex-row gap-4 animate-fade-up animation-delay-400">
+          {/* CTA Buttons - Smaller Size */}
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 animate-fade-up animation-delay-400 px-4 sm:px-0">
             <Button 
-              size="xl"
-              className="bg-[#8b9c6d] hover:bg-[#7a8b5d] dark:bg-[#a8b88d] dark:hover:bg-[#98a87d] text-white font-bold text-lg px-8 py-7 rounded-full shadow-xl shadow-[#8b9c6d]/30 dark:shadow-[#a8b88d]/30 hover:shadow-[#8b9c6d]/50 dark:hover:shadow-[#a8b88d]/50 transition-all duration-300 hover:scale-105" 
+              size="lg"
+              className="bg-[#8b9c6d] hover:bg-[#7a8b5d] dark:bg-[#a8b88d] dark:hover:bg-[#98a87d] text-white font-semibold text-sm sm:text-base px-6 sm:px-7 py-3 sm:py-4 rounded-full shadow-lg shadow-[#8b9c6d]/30 dark:shadow-[#a8b88d]/30 hover:shadow-[#8b9c6d]/40 dark:hover:shadow-[#a8b88d]/40 transition-all duration-300 hover:scale-105 w-full sm:w-auto" 
               asChild
             >
               <Link to="/partner">
                 Get Started Now
-                <ArrowRight className="w-6 h-6 ml-2" />
+                <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
               </Link>
             </Button>
             <Button 
-              size="xl"
-              className="bg-white/60 dark:bg-white/10 backdrop-blur-md hover:bg-white/80 dark:hover:bg-white/20 text-[#4a5a3a] dark:text-white font-bold text-lg px-8 py-7 rounded-full border-2 border-[#8b9c6d]/40 dark:border-white/30 hover:border-[#8b9c6d]/60 dark:hover:border-white/50 transition-all duration-300 hover:scale-105" 
+              size="lg"
+              className="bg-white/60 dark:bg-white/10 backdrop-blur-md hover:bg-white/80 dark:hover:bg-white/20 text-[#2d2d2d] dark:text-white font-semibold text-sm sm:text-base px-6 sm:px-7 py-3 sm:py-4 rounded-full border-2 border-[#8b9c6d]/40 dark:border-white/30 hover:border-[#8b9c6d]/60 dark:hover:border-white/50 transition-all duration-300 hover:scale-105 w-full sm:w-auto" 
               asChild
             >
               <Link to="/about">Learn More</Link>

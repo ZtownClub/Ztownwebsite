@@ -18,31 +18,31 @@ const launchAreas = [
 
 const LaunchZoneMap = () => {
   return (
-    <section className="py-24 px-4 relative overflow-hidden bg-gradient-to-b from-background via-[#f5f1e8]/30 dark:via-card/20 to-background">
+    <section className="py-12 sm:py-16 md:py-24 px-4 relative overflow-hidden bg-gradient-to-b from-background via-[#f5f1e8]/30 dark:via-card/20 to-background">
       {/* Animated Background Elements */}
-      <div className="absolute top-20 left-10 w-72 h-72 bg-[#8b9c6d]/10 dark:bg-primary/10 rounded-full blur-[100px] animate-pulse" />
-      <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#8b9c6d]/10 dark:bg-primary/10 rounded-full blur-[120px] animate-pulse delay-1000" />
+      <div className="absolute top-20 left-4 sm:left-10 w-48 h-48 sm:w-72 sm:h-72 bg-[#8b9c6d]/10 dark:bg-primary/10 rounded-full blur-[100px] animate-pulse" />
+      <div className="absolute bottom-20 right-4 sm:right-10 w-64 h-64 sm:w-96 sm:h-96 bg-[#8b9c6d]/10 dark:bg-primary/10 rounded-full blur-[120px] animate-pulse delay-1000" />
       
       <div className="container mx-auto max-w-7xl relative z-10">
         {/* Header */}
-        <div className="text-center mb-16 animate-fade-up">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#8b9c6d]/10 dark:bg-primary/10 border border-[#8b9c6d]/20 dark:border-primary/20 text-[#8b9c6d] dark:text-primary text-sm font-medium mb-6">
-            <Zap className="w-4 h-4" />
+        <div className="text-center mb-8 sm:mb-12 md:mb-16 animate-fade-up">
+          <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full bg-[#8b9c6d]/10 dark:bg-primary/10 border border-[#8b9c6d]/20 dark:border-primary/20 text-[#8b9c6d] dark:text-primary text-xs sm:text-sm font-medium mb-3 sm:mb-4 md:mb-6">
+            <Zap className="w-3 h-3 sm:w-4 sm:h-4" />
             <span>Hyperlocal Delivery</span>
           </div>
-          <h2 className="text-4xl md:text-5xl lg:text-6xl font-black mb-6">
-            <span className="text-[#3d3d3d] dark:text-white">Will Soon be Live in </span>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-black mb-3 sm:mb-4 md:mb-6">
+            <span className="text-[#2d2d2d] dark:text-white">Will Soon be Live in </span>
             <span className="text-[#8b9c6d] dark:text-[#a8b88d]">Gurugram</span>
           </h2>
-          <p className="text-xl text-[#6b6b6b] dark:text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg md:text-xl text-[#4a4a4a] dark:text-muted-foreground max-w-2xl mx-auto px-4 sm:px-0">
             Lightning-fast fashion delivery within <span className="text-[#8b9c6d] dark:text-[#a8b88d] font-semibold">4.5 km radius</span>
           </p>
         </div>
 
-        <div className="flex flex-col lg:flex-row gap-12 items-center">
-          {/* Enhanced Map Visual */}
-          <div className="flex-1 relative animate-fade-up animation-delay-200">
-            <div className="relative w-full aspect-square max-w-xl mx-auto">
+        <div className="flex flex-col lg:flex-row gap-6 sm:gap-8 md:gap-12 items-center">
+          {/* Enhanced Map Visual - Mobile Optimized */}
+          <div className="flex-1 relative animate-fade-up animation-delay-200 w-full">
+            <div className="relative w-full aspect-square max-w-md sm:max-w-lg lg:max-w-xl mx-auto">
               {/* Glow Effect Behind Map */}
               <div className="absolute inset-0 bg-[#8b9c6d]/20 dark:bg-primary/20 rounded-3xl blur-3xl scale-95" />
               
@@ -151,8 +151,8 @@ const LaunchZoneMap = () => {
                   ))}
                 </g>
 
-                {/* Sector Labels - Enhanced Typography */}
-                <g style={{ fontSize: '10px', fontWeight: 600 }} className="fill-[#4a5a3a] dark:fill-white">
+                {/* Sector Labels - Enhanced Typography - Responsive */}
+                <g style={{ fontSize: '8px', fontWeight: 600 }} className="fill-[#4a5a3a] dark:fill-white sm:text-[10px]">
                   <text x="160" y="130" textAnchor="middle">Udyog Vihar</text>
                   <text x="260" y="120" textAnchor="middle">Sector 18</text>
                   <text x="280" y="150" textAnchor="middle">DLF Ph 3</text>
@@ -176,33 +176,33 @@ const LaunchZoneMap = () => {
                 </g>
 
                 {/* City Label */}
-                <text x="200" y="388" textAnchor="middle" className="fill-[#3d3d3d] dark:fill-white" style={{ fontSize: '16px', fontWeight: 800, letterSpacing: '0.1em' }}>
+                <text x="200" y="388" textAnchor="middle" className="fill-[#3d3d3d] dark:fill-white" style={{ fontSize: '14px', fontWeight: 800, letterSpacing: '0.1em' }}>
                   GURUGRAM
                 </text>
               </svg>
             </div>
           </div>
 
-          {/* Enhanced Info Card */}
-          <div className="lg:w-96 w-full animate-fade-up animation-delay-400">
-            <div className="rounded-3xl p-8 bg-[#f5f1e8]/80 dark:bg-[#2a2f23]/80 backdrop-blur-xl border-2 border-[#8b9c6d]/20 dark:border-white/10 shadow-2xl hover:shadow-[#8b9c6d]/20 dark:hover:shadow-primary/20 transition-all duration-300 hover:scale-[1.02]">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-14 h-14 rounded-2xl flex items-center justify-center bg-[#8b9c6d] dark:bg-primary shadow-lg">
-                  <MapPin className="w-7 h-7 text-white" />
+          {/* Enhanced Info Card - Mobile Optimized */}
+          <div className="w-full lg:w-96 animate-fade-up animation-delay-400">
+            <div className="rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 bg-[#f5f1e8]/80 dark:bg-[#2a2f23]/80 backdrop-blur-xl border-2 border-[#8b9c6d]/20 dark:border-white/10 shadow-2xl hover:shadow-[#8b9c6d]/20 dark:hover:shadow-primary/20 transition-all duration-300 hover:scale-[1.02]">
+              <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl sm:rounded-2xl flex items-center justify-center bg-[#8b9c6d] dark:bg-primary shadow-lg">
+                  <MapPin className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold text-[#3d3d3d] dark:text-white">
+                  <h3 className="text-xl sm:text-2xl font-bold text-[#2d2d2d] dark:text-white">
                     Coverage Areas
                   </h3>
-                  <p className="text-sm text-[#6b6b6b] dark:text-muted-foreground">12 Active Zones</p>
+                  <p className="text-xs sm:text-sm text-[#4a4a4a] dark:text-muted-foreground">12 Active Zones</p>
                 </div>
               </div>
 
-              <div className="flex flex-wrap gap-2 mb-6">
+              <div className="flex flex-wrap gap-2 mb-4 sm:mb-6">
                 {launchAreas.map((area, index) => (
                   <span
                     key={area}
-                    className="px-4 py-2 rounded-full text-sm font-semibold bg-[#8b9c6d]/15 dark:bg-primary/15 text-[#4a5a3a] dark:text-primary border border-[#8b9c6d]/30 dark:border-primary/30 transition-all duration-300 hover:bg-[#8b9c6d]/25 dark:hover:bg-primary/25 hover:scale-105 hover:shadow-md cursor-default animate-fade-up"
+                    className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-semibold bg-[#8b9c6d]/15 dark:bg-primary/15 text-[#2d2d2d] dark:text-primary border border-[#8b9c6d]/30 dark:border-primary/30 transition-all duration-300 hover:bg-[#8b9c6d]/25 dark:hover:bg-primary/25 hover:scale-105 hover:shadow-md cursor-default animate-fade-up"
                     style={{ animationDelay: `${index * 50}ms` }}
                   >
                     {area}
@@ -210,16 +210,16 @@ const LaunchZoneMap = () => {
                 ))}
               </div>
 
-              <div className="p-4 rounded-2xl bg-[#8b9c6d]/10 dark:bg-primary/10 border border-[#8b9c6d]/20 dark:border-primary/20">
-                <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-lg flex items-center justify-center bg-[#8b9c6d] dark:bg-primary flex-shrink-0">
-                    <TrendingUp className="w-4 h-4 text-white" />
+              <div className="p-3 sm:p-4 rounded-xl sm:rounded-2xl bg-[#8b9c6d]/10 dark:bg-primary/10 border border-[#8b9c6d]/20 dark:border-primary/20">
+                <div className="flex items-start gap-2 sm:gap-3">
+                  <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-lg flex items-center justify-center bg-[#8b9c6d] dark:bg-primary flex-shrink-0">
+                    <TrendingUp className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white" />
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-[#3d3d3d] dark:text-white mb-1">
+                    <p className="text-xs sm:text-sm font-semibold text-[#2d2d2d] dark:text-white mb-1">
                       Expansion Coming Soon
                     </p>
-                    <p className="text-xs text-[#6b6b6b] dark:text-muted-foreground leading-relaxed">
+                    <p className="text-xs text-[#4a4a4a] dark:text-muted-foreground leading-relaxed">
                       We're rapidly expanding to more sectors across NCR. Stay tuned for updates!
                     </p>
                   </div>

@@ -35,17 +35,17 @@ const Navbar = () => {
           : "bg-gradient-to-b from-[#f5f1e8]/60 to-transparent dark:from-background/40 dark:to-transparent py-6"
       }`}
     >
-      <div className="container mx-auto px-6 flex items-center justify-between">
+      <div className="container mx-auto px-4 sm:px-6 flex items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-3 group">
-  <ZTownLogo size="md" /> {/* Changed from "sm" to "md" */}
-  <span className="text-3xl md:text-4xl font-bold tracking-tight"> {/* Changed from text-2xl md:text-3xl */}
-    <span className="text-[#8b9c6d] dark:text-primary">zTown</span>
-  </span>
-</Link>
+        <Link to="/" className="flex items-center gap-2 sm:gap-3 group">
+          <ZTownLogo size="md" />
+          <span className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight">
+            <span className="text-[#8b9c6d] dark:text-primary">zTown</span>
+          </span>
+        </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-6 lg:gap-8">
           {navLinks.map((link) => (
             <Link
               key={link.path}
@@ -67,10 +67,10 @@ const Navbar = () => {
           <Button
             variant="ghost"
             size="icon"
-            className="md:hidden text-[#4a5a3a] dark:text-foreground hover:text-[#8b9c6d] dark:hover:text-primary"
+            className="md:hidden text-[#4a5a3a] dark:text-foreground hover:text-[#8b9c6d] dark:hover:text-primary w-9 h-9"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            {isMobileMenuOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
           </Button>
         </div>
       </div>
@@ -78,21 +78,23 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
         <div className="md:hidden absolute top-full left-0 right-0 bg-[#f5f1e8]/95 dark:bg-background/95 backdrop-blur-xl border-b border-[#8b9c6d]/20 dark:border-border animate-fade-up shadow-lg">
-          <div className="container mx-auto px-6 py-6 flex flex-col gap-4">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={`text-lg font-medium py-2 transition-colors ${
-                  isActive(link.path) 
-                    ? "text-[#8b9c6d] dark:text-primary" 
-                    : "text-[#6b6b6b] dark:text-muted-foreground hover:text-[#8b9c6d] dark:hover:text-primary"
-                }`}
-              >
-                {link.name}
-              </Link>
-            ))}
+          <div className="container mx-auto px-4 sm:px-6 py-4">
+            <div className="flex flex-col space-y-2">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className={`text-base font-medium py-3 px-4 rounded-lg transition-colors ${
+                    isActive(link.path)
+                      ? "text-[#8b9c6d] dark:text-primary bg-[#8b9c6d]/10 dark:bg-primary/10"
+                      : "text-[#4a5a3a] dark:text-muted-foreground hover:text-[#8b9c6d] dark:hover:text-primary hover:bg-[#8b9c6d]/5 dark:hover:bg-primary/5"
+                  }`}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {link.name}
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       )}

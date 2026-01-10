@@ -167,18 +167,26 @@ const Partner = () => {
             </div>
 
             {/* Benefits Grid */}
-            <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto mb-24">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 max-w-5xl mx-auto mb-16 sm:mb-20 md:mb-24">
               {benefits.map((benefit, index) => (
                 <div
                   key={benefit.title}
-                  className="glass-card rounded-2xl p-8 text-center hover-lift animate-fade-up"
+                  className="glass-card rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 hover-lift animate-fade-up"
                   style={{ animationDelay: `${0.2 + index * 0.1}s` }}
                 >
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-primary/10 text-primary mb-6">
-                    <benefit.icon className="w-8 h-8" />
+                  {/* Mobile: Horizontal Layout, Desktop: Vertical Layout */}
+                  <div className="flex items-start gap-3 sm:gap-4 md:block md:text-center">
+                    {/* Icon */}
+                    <div className="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 md:inline-flex md:w-16 md:h-16 rounded-lg md:rounded-2xl bg-primary/10 text-primary flex items-center justify-center md:mb-6">
+                      <benefit.icon className="w-5 h-5 sm:w-6 sm:h-6 md:w-8 md:h-8" />
+                    </div>
+
+                    {/* Content */}
+                    <div className="flex-1 min-w-0 md:flex-none">
+                      <h3 className="text-base sm:text-lg md:text-xl font-semibold mb-1 sm:mb-2 md:mb-3">{benefit.title}</h3>
+                      <p className="text-muted-foreground text-xs sm:text-sm md:text-base">{benefit.description}</p>
+                    </div>
                   </div>
-                  <h3 className="text-xl font-semibold mb-3">{benefit.title}</h3>
-                  <p className="text-muted-foreground">{benefit.description}</p>
                 </div>
               ))}
             </div>
@@ -186,20 +194,28 @@ const Partner = () => {
         </section>
 
         {/* Partner Types */}
-        <section className="py-16">
+        <section className="py-12 sm:py-16">
           <div className="container mx-auto px-6">
-            <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 max-w-4xl mx-auto">
               {partnerTypes.map((type, index) => (
                 <div
                   key={type.title}
-                  className="glass-card rounded-3xl p-8 text-center gradient-border hover-lift"
+                  className="glass-card rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 gradient-border hover-lift"
                 >
-                  <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 text-primary mb-6">
-                    <type.icon className="w-10 h-10" />
+                  {/* Mobile: Horizontal Layout, Desktop: Vertical Layout */}
+                  <div className="flex items-start gap-3 sm:gap-4 md:block md:text-center">
+                    {/* Icon */}
+                    <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 md:inline-flex md:w-20 md:h-20 rounded-lg md:rounded-2xl bg-gradient-to-br from-primary/20 to-accent/20 text-primary flex items-center justify-center md:mb-6">
+                      <type.icon className="w-6 h-6 sm:w-7 sm:h-7 md:w-10 md:h-10" />
+                    </div>
+
+                    {/* Content */}
+                    <div className="flex-1 min-w-0 md:flex-none">
+                      <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-1 md:mb-2">{type.title}</h3>
+                      <p className="text-primary font-medium mb-2 md:mb-3 text-sm md:text-base">{type.subtitle}</p>
+                      <p className="text-muted-foreground text-xs sm:text-sm md:text-base">{type.description}</p>
+                    </div>
                   </div>
-                  <h3 className="text-2xl font-bold mb-2">{type.title}</h3>
-                  <p className="text-primary font-medium mb-3">{type.subtitle}</p>
-                  <p className="text-muted-foreground">{type.description}</p>
                 </div>
               ))}
             </div>

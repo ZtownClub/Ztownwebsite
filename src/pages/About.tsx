@@ -115,19 +115,25 @@ const About = () => {
               {values.map((value, index) => (
                 <div 
                   key={value.title} 
-                  className="group relative p-5 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl bg-[#f5f1e8]/60 dark:bg-[#2a2f23]/60 backdrop-blur-md border-2 border-[#8b9c6d]/20 dark:border-white/10 hover:border-[#8b9c6d]/40 dark:hover:border-white/20 transition-all duration-300 hover:scale-105 hover:shadow-2xl animate-fade-up"
+                  className="group relative p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl md:rounded-3xl bg-[#f5f1e8]/60 dark:bg-[#2a2f23]/60 backdrop-blur-md border-2 border-[#8b9c6d]/20 dark:border-white/10 hover:border-[#8b9c6d]/40 dark:hover:border-white/20 transition-all duration-300 hover:scale-105 hover:shadow-2xl animate-fade-up"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
-                  <div className="text-center">
-                    <div className={`inline-flex items-center justify-center w-16 h-16 sm:w-20 sm:h-20 rounded-2xl ${value.bgColor} ${value.color} mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                      <value.icon className="w-8 h-8 sm:w-10 sm:h-10" />
+                  {/* Mobile: Horizontal Layout, Desktop: Vertical Layout */}
+                  <div className="flex items-start gap-3 sm:block sm:text-center">
+                    {/* Icon */}
+                    <div className={`flex-shrink-0 w-10 h-10 sm:inline-flex sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-lg sm:rounded-2xl ${value.bgColor} ${value.color} flex items-center justify-center sm:mb-4 md:mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                      <value.icon className="w-5 h-5 sm:w-8 sm:h-8 md:w-10 md:h-10" />
                     </div>
-                    <h3 className="text-lg sm:text-xl font-bold mb-2 sm:mb-4 text-[#2d2d2d] dark:text-white">
-                      {value.title}
-                    </h3>
-                    <p className="text-[#4a4a4a] dark:text-muted-foreground leading-relaxed text-xs sm:text-sm">
-                      {value.description}
-                    </p>
+
+                    {/* Content */}
+                    <div className="flex-1 min-w-0 sm:flex-none">
+                      <h3 className="text-base sm:text-lg md:text-xl font-bold mb-1 sm:mb-2 md:mb-4 text-[#2d2d2d] dark:text-white">
+                        {value.title}
+                      </h3>
+                      <p className="text-[#4a4a4a] dark:text-muted-foreground leading-relaxed text-xs sm:text-sm md:text-base">
+                        {value.description}
+                      </p>
+                    </div>
                   </div>
                 </div>
               ))}

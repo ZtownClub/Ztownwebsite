@@ -2,6 +2,12 @@
   "redirects": [
     {
       "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "ztownwebsite.vercel.app"
+        }
+      ],
       "destination": "https://ztown.club/$1",
       "permanent": true
     }

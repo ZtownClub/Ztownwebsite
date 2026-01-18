@@ -161,7 +161,7 @@ const Contact = () => {
     </div>
     <div>
       <h3 className="font-semibold mb-1">Phone</h3>
-      <p className="text-muted-foreground">96930 63807, 9929894791 , 97580 76000</p>
+      <p className="text-muted-foreground">9929894791, 9389820899 , 9758076000</p>
     </div>
   </div>
                   <div className="flex items-start gap-4">

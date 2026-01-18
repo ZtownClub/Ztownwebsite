@@ -33,7 +33,7 @@ const HeroSection = () => {
         </div>
 
         {/* Content Container - Left Aligned */}
-        <div className="flex flex-col justify-center items-start h-screen z-20 relative px-5">
+        <div className="flex flex-col justify-center items-start h-screen z-20 relative px-5 -translate-y-8">
           <div className="flex flex-col items-start text-left w-full max-w-md space-y-6">
             {/* Badge */}
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/60 dark:bg-white/10 backdrop-blur-md border border-[#8b9c6d]/30 dark:border-white/20 text-[#2d2d2d] dark:text-white text-sm font-medium animate-fade-up shadow-lg">
